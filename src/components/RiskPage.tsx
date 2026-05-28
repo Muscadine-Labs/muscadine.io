@@ -4,10 +4,10 @@ import React from 'react';
 import Link from 'next/link';
 
 const VAULT_EXPOSURE = [
-  { name: 'USDC Prime (V2)', chain: 'Base', profile: 'Conservative', protocols: 'Morpho markets (overcollateralized lending)', tier: 'Moderate' },
-  { name: 'WETH Prime (V2)', chain: 'Base', profile: 'Moderate', protocols: 'Morpho markets (overcollateralized lending)', tier: 'Moderate–elevated' },
-  { name: 'cbBTC Prime (V2)', chain: 'Base', profile: 'Moderate', protocols: 'Morpho markets (overcollateralized lending)', tier: 'Moderate–elevated' },
-  { name: 'USDC / WETH / cbBTC Vaults (V1, deprecated)', chain: 'Base', profile: 'Legacy strategies', protocols: 'Morpho markets (overcollateralized lending)', tier: 'Moderate–elevated' },
+  { name: 'USDC Prime (V2)', protocols: 'Morpho markets (overcollateralized lending)' },
+  { name: 'WETH Prime (V2)', protocols: 'Morpho markets (overcollateralized lending)' },
+  { name: 'cbBTC Prime (V2)', protocols: 'Morpho markets (overcollateralized lending)' },
+  { name: 'USDC / WETH / cbBTC Vaults (V1, deprecated)', protocols: 'Morpho markets (overcollateralized lending)' },
 ];
 
 const RiskPage: React.FC = () => {
@@ -132,20 +132,14 @@ const RiskPage: React.FC = () => {
                 <thead>
                   <tr className="border-b bg-gray-50">
                     <th className="text-left p-3 font-medium text-gray-900">Vault</th>
-                    <th className="text-left p-3 font-medium text-gray-900">Chain</th>
-                    <th className="text-left p-3 font-medium text-gray-900">Profile</th>
                     <th className="text-left p-3 font-medium text-gray-900">Exposure</th>
-                    <th className="text-left p-3 font-medium text-gray-900">Doc tier</th>
                   </tr>
                 </thead>
                 <tbody>
                   {VAULT_EXPOSURE.map((vault) => (
                     <tr key={vault.name} className="border-b last:border-0">
                       <td className="p-3 font-medium text-gray-900">{vault.name}</td>
-                      <td className="p-3 text-gray-700">{vault.chain}</td>
-                      <td className="p-3 text-gray-700">{vault.profile}</td>
                       <td className="p-3 text-gray-700">{vault.protocols}</td>
-                      <td className="p-3 text-gray-700">{vault.tier}</td>
                     </tr>
                   ))}
                 </tbody>

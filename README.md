@@ -1,4 +1,4 @@
-# Muscadine Interface
+# muscadine.io
 
 Next.js application for Muscadine - Financial self-sovereignty platform.
 
