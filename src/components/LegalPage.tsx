@@ -15,15 +15,20 @@ const LegalPage: React.FC = () => {
 
           <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 mb-8">
             <h2 className="text-xl font-semibold text-yellow-800 mb-2">⚠️ IMPORTANT LEGAL NOTICE</h2>
-            <p className="text-yellow-800 font-semibold">
+            <p className="text-yellow-800 font-semibold mb-2">
               READ THIS DISCLAIMER CAREFULLY BEFORE USING OUR SERVICES.
+            </p>
+            <p className="text-yellow-800">
+              Muscadine Labs LLC is a DeFi vault curator and technology provider — not a bank, broker, investment adviser, or custodian. For operational risk framework and vault exposure summaries, see our{' '}
+              <Link href="/risk" className="underline font-semibold">Risk</Link> page. Technical documentation is published at{' '}
+              <a href="https://docs.muscadine.io/" target="_blank" rel="noopener noreferrer" className="underline font-semibold">docs.muscadine.io</a>.
             </p>
           </div>
 
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Our Services</h2>
             <p className="text-gray-700 mb-4">
-              Muscadine Labs LLC, a limited liability company, provides comprehensive services focused on Bitcoin security, self-custody solutions, and decentralized finance (DeFi) risk management. Our services include:
+              Muscadine Labs LLC curates non-custodial Morpho vault strategies on Base, publishes educational self-custody guidance, and operates related interfaces (including app.muscadine.io). We do not custody user assets. Our services include:
             </p>
             <ul className="text-gray-700 list-disc list-inside space-y-2 mb-4">
               <li><strong>Risk Curation for Non-Custodial Morpho Vaults:</strong> We curate and manage risk for non-custodial vault services, including Morpho vaults, evaluating protocols, assessing smart contract security, and providing guidance on safe DeFi participation</li>

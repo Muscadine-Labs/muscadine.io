@@ -15,7 +15,9 @@ const TermsPage: React.FC = () => {
 
           <div className="bg-yellow-100 border-l-4 border-yellow-500 p-6 mb-8 rounded-sm">
             <p className="text-yellow-800 font-semibold">
-              <strong>IMPORTANT DISCLAIMER:</strong> By using Muscadine Labs LLC's services, you acknowledge that all content is for educational and informational purposes only. We are not financial advisors or legal experts. Use of our services does not create any professional relationship.
+              <strong>IMPORTANT DISCLAIMER:</strong> Muscadine Labs LLC is a DeFi vault curator and technology provider — not a bank, broker, investment adviser, or custodian. All content is for educational and informational purposes only. We do not provide financial, investment, tax, or legal advice. Use of our services does not create any professional relationship. Read our{' '}
+              <Link href="/risk" className="underline">Risk</Link> page and{' '}
+              <Link href="/legal" className="underline">Legal disclaimer</Link> before using vaults or related products.
             </p>
           </div>
 
@@ -34,17 +36,23 @@ const TermsPage: React.FC = () => {
               2. Our Services
             </h2>
             <p className="text-gray-700 mb-4">
-              Muscadine Labs LLC, a limited liability company, provides comprehensive services focused on Bitcoin security, self-custody solutions, and decentralized finance (DeFi) risk management. Our services include:
+              Muscadine Labs LLC, a limited liability company, is a <strong>DeFi vault curator and technology provider</strong>. We do not take custody of user deposits, guarantee returns, or operate as a bank or registered investment adviser. Our properties include:
             </p>
             <ul className="text-gray-700 list-disc list-inside space-y-2 mb-4">
-              <li><strong>Risk Curation for Non-Custodial Morpho Vaults:</strong> We curate and manage risk for non-custodial vault services, including Morpho vaults, evaluating protocols, assessing smart contract security, and providing guidance on safe DeFi participation</li>
-              <li><strong>Bitcoin Security & Self-Custody:</strong> Educational resources and guidance on implementing secure Bitcoin self-custody solutions</li>
-              <li><strong>DeFi Protocol Access:</strong> Access to curated DeFi protocols including Morpho vaults for lending, borrowing, and yield generation services</li>
-              <li><strong>Bitcoin Node Services:</strong> Access to our self-hosted Bitcoin node for enhanced privacy, transaction validation, and direct network connectivity</li>
-              <li><strong>Educational Content:</strong> Comprehensive educational materials about cryptocurrency, blockchain technology, and decentralized finance</li>
+              <li><strong>muscadine.io</strong> — company site, legal documents, and risk disclosures (authoritative source)</li>
+              <li><strong>app.muscadine.io</strong> — non-custodial interface to interact with curated Morpho vaults on Base</li>
+              <li><strong>docs.muscadine.io</strong> — technical documentation; legal, terms, privacy, and risk pages mirror content published here</li>
+              <li><strong>analytics.muscadine.io</strong> — vault configuration and performance data</li>
+            </ul>
+            <p className="text-gray-700 mb-4">Our services include:</p>
+            <ul className="text-gray-700 list-disc list-inside space-y-2 mb-4">
+              <li><strong>Risk curation for non-custodial Morpho vaults</strong> on Base — market selection, parameters, and monitoring (see <Link href="/risk" className="text-orange-600 underline">/risk</Link>)</li>
+              <li><strong>Bitcoin security &amp; self-custody</strong> — educational guidance only; users hold their own keys</li>
+              <li><strong>Bitcoin node access</strong> — optional connectivity to our self-hosted node</li>
+              <li><strong>Educational content</strong> about cryptocurrency, blockchain, and DeFi</li>
             </ul>
             <p className="text-gray-700 mb-4">
-              All content is for educational and informational purposes only. We do not provide financial, investment, or legal advice.
+              Yields are variable and not guaranteed. V1 vault strategies are deprecated; prefer current Prime (V2) vaults unless you understand legacy risk. All content is for educational and informational purposes only.
             </p>
           </section>
 

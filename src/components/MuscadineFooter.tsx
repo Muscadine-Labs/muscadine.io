@@ -145,6 +145,12 @@ export default function MuscadineFooter() {
               >
                 Terms of Service
               </Link>
+              <Link 
+                href="/risk"
+                className="block text-sm text-gray-300 hover:text-white transition-colors duration-200"
+              >
+                Risk
+              </Link>
             </div>
           </div>
         </div>
