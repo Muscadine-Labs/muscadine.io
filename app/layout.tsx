@@ -21,20 +21,20 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'Muscadine - Financial self-sovereignty',
+  title: 'Muscadine Labs',
   description: 'Empowering financial freedom through Bitcoin security and decentralized finance.',
   keywords: 'DeFi, Bitcoin, Base, Morpho, vault, yield, crypto, finance, self-sovereignty, dashboard',
   authors: [{ name: 'Nicholas Connelly' }],
   openGraph: {
-    title: 'Muscadine - Financial self-sovereignty',
+    title: 'Muscadine Labs',
     description: 'Empowering financial freedom through Bitcoin security and decentralized finance.',
     type: 'website',
     url: 'https://muscadine.io',
-    siteName: 'Muscadine',
+    siteName: 'Muscadine Labs',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Muscadine - Financial self-sovereignty',
+    title: 'Muscadine Labs',
     description: 'Empowering financial freedom through Bitcoin security and decentralized finance.',
     creator: '@nicklutk',
   },
@@ -68,7 +68,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'WebApplication',
-              name: 'Muscadine - Financial self-sovereignty',
+              name: 'Muscadine Labs',
               url: 'https://muscadine.io',
               description: 'Empowering financial freedom through Bitcoin security and decentralized finance.',
               applicationCategory: 'FinanceApplication',
