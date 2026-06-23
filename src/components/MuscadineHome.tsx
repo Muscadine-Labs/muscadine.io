@@ -228,7 +228,7 @@ const MuscadineHome = () => {
                   Our App
                 </h3>
                 <p className="text-base text-gray-600 leading-relaxed">
-                  Access our Morpho vaults on Base for secure yield on USDC, Bitcoin, and Ethereum. Built for financial freedom with industry-low fees (2% performance fee) and flexible deposits/withdrawals of any amount, anytime.
+                  Access our Morpho vaults on Base for secure yield on USDC, Bitcoin, and Ethereum. Built for financial freedom with flexible deposits/withdrawals of any amount, anytime.
                 </p>
                 <a 
                   href="https://app.muscadine.io"
@@ -296,27 +296,29 @@ const MuscadineHome = () => {
               </div>
             </div>
 
-            {/* Service 4 - Other Solutions (Bottom Right) */}
+            {/* Service 4 - Portfolio (Bottom Right) */}
             <div className="bg-white rounded-lg border-2 border-gray-200 p-6 sm:p-8 hover:border-gray-400 hover:scale-105 transition-all duration-300 ease-in-out">
               <div className="space-y-6">
                 {/* 3D Shape Container */}
                 <div className="w-full h-48 bg-gray-50 rounded-lg border border-gray-200">
-                  <PolyhedronShape path="/solutions" />
+                  <PolyhedronShape path="https://portfolio.muscadine.io" />
                 </div>
                 
                 <h3 className="text-2xl font-light text-gray-900 font-serif">
-                  Other Solutions
+                  Portfolio
                 </h3>
                 <p className="text-base text-gray-600 leading-relaxed">
-                  Building new DeFi infrastructure and exploring cutting-edge solutions for the decentralized economy. From protocol development to innovative financial instruments that push the boundaries of what's possible in crypto.
+                  Track, manage, and plan your net worth, assets, liabilities, cash, and more. A unified view of your financial picture to help you make informed decisions.
                 </p>
                 <a 
-                  href="/solutions"
+                  href="https://portfolio.muscadine.io"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors"
                 >
-                  Explore Solutions
+                  Open Portfolio
                   <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                   </svg>
                 </a>
               </div>

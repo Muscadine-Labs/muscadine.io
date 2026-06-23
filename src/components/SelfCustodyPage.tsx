@@ -284,8 +284,22 @@ export default function SelfCustodyPage() {
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">3. Connect to a Node</h3>
                   <p className="text-gray-700 mb-4">
-                    Point Sparrow Wallet (or your chosen wallet) to our self-hosted Electrum Server (details on the next page).
+                    Point Sparrow Wallet (or your chosen wallet) to our self-hosted Electrum Server (details on the Transfer tab), or run your own full node for maximum sovereignty.
                   </p>
+                  <p className="text-gray-700 mb-3">
+                    For your own infrastructure, a dedicated home server lets you host Bitcoin Core and an Electrum server on your network — you verify every transaction yourself without relying on a third party.
+                  </p>
+                  <a
+                    href="https://start9.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors"
+                  >
+                    Start9 — run your own Bitcoin node
+                    <svg className="w-4 h-4 ml-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
                 </div>
               </div>
               

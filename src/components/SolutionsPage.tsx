@@ -36,7 +36,7 @@ const SolutionsPage = () => {
                 Our App
               </h3>
               <p className="text-base text-gray-600 leading-relaxed">
-                Access our Morpho vaults on Base for secure yield on USDC, Bitcoin, and Ethereum. Built for financial freedom with industry-low fees and flexible deposits/withdrawals of any amount, anytime.
+                Access our Morpho vaults on Base for secure yield on USDC, Bitcoin, and Ethereum. Built for financial freedom with flexible deposits/withdrawals of any amount, anytime.
               </p>
               <a 
                 href="https://app.muscadine.io"
@@ -73,18 +73,26 @@ const SolutionsPage = () => {
             </div>
           </div>
 
-          {/* Other Solutions */}
+          {/* Portfolio */}
           <div className="bg-white rounded-lg border-2 border-gray-200 p-8 hover:border-gray-400 hover:scale-105 transition-all duration-300 ease-in-out">
             <div className="space-y-6">
               <h3 className="text-2xl font-light text-gray-900 font-serif">
-                Other Solutions
+                Portfolio
               </h3>
               <p className="text-base text-gray-600 leading-relaxed">
-                Building new DeFi infrastructure and exploring cutting-edge solutions for the decentralized economy. From protocol development to innovative financial instruments that push the boundaries of what's possible in crypto.
+                Track, manage, and plan your net worth, assets, liabilities, cash, and more. A unified view of your financial picture to help you make informed decisions.
               </p>
-              <div className="text-gray-500 italic">
-                Coming Soon - Advanced DeFi Infrastructure
-              </div>
+              <a 
+                href="https://portfolio.muscadine.io"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors"
+              >
+                Open Portfolio
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
             </div>
           </div>
 
@@ -111,33 +119,17 @@ const SolutionsPage = () => {
 
         </div>
 
-        {/* Analytics Section */}
+        {/* Other Solutions Section */}
         <div className="mt-12 py-8 px-6 rounded-lg border-2 border-gray-200 text-center">
           <h3 className="text-xl font-light text-gray-900 mb-3 font-serif">
-            Analytics
+            Other Solutions
           </h3>
           <p className="text-gray-600 text-sm leading-relaxed max-w-xl mx-auto mb-4">
-            Explore metrics and dashboards at{' '}
-            <a 
-              href="https://analytics.muscadine.io" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:text-blue-700 font-medium"
-            >
-              analytics.muscadine.io
-            </a>
+            Building new DeFi infrastructure and exploring cutting-edge solutions for the decentralized economy. From protocol development to innovative financial instruments that push the boundaries of what&apos;s possible in crypto.
           </p>
-          <a 
-            href="https://analytics.muscadine.io" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-5 py-2.5 border-2 border-gray-300 text-gray-900 font-medium rounded-lg hover:bg-gray-900 hover:text-white hover:border-gray-900 transition-all duration-300 text-sm"
-          >
-            Open Analytics
-            <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
-          </a>
+          <p className="text-gray-500 italic text-sm">
+            Coming Soon — Advanced DeFi Infrastructure
+          </p>
         </div>
       </div>
 

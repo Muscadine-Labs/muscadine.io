@@ -5,9 +5,9 @@ import Link from 'next/link';
 
 const VAULT_EXPOSURE = [
   { name: 'USDC Prime (V2)', protocols: 'Morpho markets (overcollateralized lending)' },
+  { name: 'Muscadine USDC Frontier (V2)', protocols: 'Morpho markets (overcollateralized lending)' },
   { name: 'WETH Prime (V2)', protocols: 'Morpho markets (overcollateralized lending)' },
   { name: 'cbBTC Prime (V2)', protocols: 'Morpho markets (overcollateralized lending)' },
-  { name: 'USDC / WETH / cbBTC Vaults (V1, deprecated)', protocols: 'Morpho markets (overcollateralized lending)' },
 ];
 
 const RiskPage: React.FC = () => {

@@ -85,6 +85,14 @@ export default function MuscadineFooter() {
               >
                 App
               </a>
+              <a 
+                href="https://portfolio.muscadine.io" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block text-sm text-gray-300 hover:text-white transition-colors duration-200"
+              >
+                Portfolio
+              </a>
               <Link 
                 href="/self-custody"
                 className="block text-sm text-gray-300 hover:text-white transition-colors duration-200"
