@@ -78,7 +78,7 @@ export default function MuscadineFooter() {
             <h4 className="text-sm font-medium text-white mb-4 uppercase tracking-wide">Solutions</h4>
             <div className="space-y-2">
               <a 
-                href="https://app.muscadine.io/" 
+                href="https://app.muscadine.xyz/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="block text-sm text-gray-300 hover:text-white transition-colors duration-200"
@@ -86,7 +86,7 @@ export default function MuscadineFooter() {
                 App
               </a>
               <a 
-                href="https://portfolio.muscadine.io" 
+                href="https://portfolio.muscadine.xyz" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="block text-sm text-gray-300 hover:text-white transition-colors duration-200"
@@ -113,7 +113,7 @@ export default function MuscadineFooter() {
             <h4 className="text-sm font-medium text-white mb-4 uppercase tracking-wide">Resources</h4>
             <div className="space-y-2">
               <a 
-                href="https://docs.muscadine.io/" 
+                href="https://docs.muscadine.xyz/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="block text-sm text-gray-300 hover:text-white transition-colors duration-200"
@@ -121,7 +121,7 @@ export default function MuscadineFooter() {
                 Documentation
               </a>
               <a 
-                href="https://analytics.muscadine.io" 
+                href="https://analytics.muscadine.xyz" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="block text-sm text-gray-300 hover:text-white transition-colors duration-200"

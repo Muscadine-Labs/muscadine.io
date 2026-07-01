@@ -1,14 +1,16 @@
-# muscadine.io
+# muscadine.xyz
 
-Next.js application for Muscadine - Financial self-sovereignty platform.
+Next.js marketing site for Muscadine Labs — financial self-sovereignty platform.
+
+**Live:** [https://muscadine.xyz](https://muscadine.xyz) · **Repo folder:** `muscadine.xyz` (GitHub: [Muscadine-Labs/muscadine.io](https://github.com/Muscadine-Labs/muscadine.io))
 
 ## Tech Stack
 
-- **Framework**: Next.js 16.1.1 (App Router)
+- **Framework**: Next.js 16 (App Router)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
 - **3D Graphics**: Three.js, React Three Fiber
-- **Analytics**: Vercel Analytics, Sentry
+- **Analytics**: Vercel Analytics, Speed Insights
 
 ## Development
 
@@ -18,6 +20,8 @@ npm run dev
 ```
 
 Visit [http://localhost:3002](http://localhost:3002)
+
+No environment variables required.
 
 ## Build
 
@@ -32,9 +36,15 @@ npm start
 - `src/components/` - React components
 - `public/` - Static assets
 
-## Links
+## Related sites
 
-- **Main Site**: https://www.muscadine.io
+| Site | URL |
+|------|-----|
+| App | https://app.muscadine.xyz |
+| Docs | https://docs.muscadine.xyz |
+| Analytics | https://analytics.muscadine.xyz |
+| Curator | https://curator.muscadine.xyz |
+| Portfolio | https://portfolio.muscadine.xyz |
 
 ## License
 

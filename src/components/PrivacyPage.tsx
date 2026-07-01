@@ -140,7 +140,7 @@ const PrivacyPage: React.FC = () => {
               <p className="text-gray-700 mb-2">If you have questions about this Privacy Policy, please contact us:</p>
               <p className="text-gray-700"><strong>Company:</strong> Muscadine Labs LLC</p>
               <p className="text-gray-700"><strong>Email:</strong> muscadinelabs@gmail.com</p>
-              <p className="text-gray-700"><strong>Website:</strong> muscadine.io</p>
+              <p className="text-gray-700"><strong>Website:</strong> muscadine.xyz</p>
             </div>
           </section>
 

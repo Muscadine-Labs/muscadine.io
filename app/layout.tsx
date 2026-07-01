@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: 'Muscadine Labs',
     description: 'Empowering financial freedom through Bitcoin security and decentralized finance.',
     type: 'website',
-    url: 'https://muscadine.io',
+    url: 'https://muscadine.xyz',
     siteName: 'Muscadine Labs',
   },
   twitter: {
@@ -61,7 +61,7 @@ export default function RootLayout({
       <head>
         <meta name="theme-color" content="#f59e0b" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
-        <link rel="canonical" href="https://muscadine.io" />
+        <link rel="canonical" href="https://muscadine.xyz" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -69,7 +69,7 @@ export default function RootLayout({
               '@context': 'https://schema.org',
               '@type': 'WebApplication',
               name: 'Muscadine Labs',
-              url: 'https://muscadine.io',
+              url: 'https://muscadine.xyz',
               description: 'Empowering financial freedom through Bitcoin security and decentralized finance.',
               applicationCategory: 'FinanceApplication',
               operatingSystem: 'Web Browser',
