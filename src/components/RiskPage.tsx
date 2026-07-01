@@ -108,12 +108,12 @@ const RiskPage: React.FC = () => {
             <p className="text-gray-700 text-sm">
               On-chain roles and contract addresses:{' '}
               <a
-                href="https://docs.muscadine.io/vault/roles-contracts"
+                href="https://docs.muscadine.xyz/vault/roles-contracts"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-orange-600 underline"
               >
-                docs.muscadine.io — Roles &amp; contracts
+                docs.muscadine.xyz — Roles &amp; contracts
               </a>
             </p>
           </section>
@@ -122,8 +122,8 @@ const RiskPage: React.FC = () => {
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">Vault exposure (summary)</h2>
             <p className="text-gray-700 text-sm mb-4">
               For documentation purposes only. Verify live allocation on{' '}
-              <a href="https://analytics.muscadine.io/" target="_blank" rel="noopener noreferrer" className="text-orange-600 underline">
-                analytics.muscadine.io
+              <a href="https://analytics.muscadine.xyz/" target="_blank" rel="noopener noreferrer" className="text-orange-600 underline">
+                analytics.muscadine.xyz
               </a>{' '}
               and on-chain.
             </p>
@@ -183,8 +183,8 @@ const RiskPage: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <a href="https://docs.muscadine.io/" target="_blank" rel="noopener noreferrer" className="text-orange-600 underline">
-                  Technical documentation (docs.muscadine.io)
+                <a href="https://docs.muscadine.xyz/" target="_blank" rel="noopener noreferrer" className="text-orange-600 underline">
+                  Technical documentation (docs.muscadine.xyz)
                 </a>
               </li>
             </ul>

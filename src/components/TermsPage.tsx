@@ -39,10 +39,10 @@ const TermsPage: React.FC = () => {
               Muscadine Labs LLC, a limited liability company, is a <strong>DeFi vault curator and technology provider</strong>. We do not take custody of user deposits, guarantee returns, or operate as a bank or registered investment adviser. Our properties include:
             </p>
             <ul className="text-gray-700 list-disc list-inside space-y-2 mb-4">
-              <li><strong>muscadine.io</strong> — company site, legal documents, and risk disclosures (authoritative source)</li>
-              <li><strong>app.muscadine.io</strong> — non-custodial interface to interact with curated Morpho vaults on Base</li>
-              <li><strong>docs.muscadine.io</strong> — technical documentation; legal, terms, privacy, and risk pages mirror content published here</li>
-              <li><strong>analytics.muscadine.io</strong> — vault configuration and performance data</li>
+              <li><strong>muscadine.xyz</strong> — company site, legal documents, and risk disclosures (authoritative source)</li>
+              <li><strong>app.muscadine.xyz</strong> — non-custodial interface to interact with curated Morpho vaults on Base</li>
+              <li><strong>docs.muscadine.xyz</strong> — technical documentation; legal, terms, privacy, and risk pages mirror content published here</li>
+              <li><strong>analytics.muscadine.xyz</strong> — vault configuration and performance data</li>
             </ul>
             <p className="text-gray-700 mb-4">Our services include:</p>
             <ul className="text-gray-700 list-disc list-inside space-y-2 mb-4">

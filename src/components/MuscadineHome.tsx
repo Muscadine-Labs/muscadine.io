@@ -121,7 +121,7 @@ const MuscadineHome = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start items-center lg:items-start">
               <a 
-                href="https://app.muscadine.io" 
+                href="https://app.muscadine.xyz" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-6 py-3 border-2 border-gray-900 hover:border-gray-800 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-colors"
@@ -138,7 +138,7 @@ const MuscadineHome = () => {
                 About Us
               </a>
               <a 
-                href="https://docs.muscadine.io/" 
+                href="https://docs.muscadine.xyz/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-6 py-3 border-2 border-gray-300 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white hover:border-gray-900 transition-all duration-300"
@@ -221,7 +221,7 @@ const MuscadineHome = () => {
               <div className="space-y-6">
                 {/* 3D Shape Container */}
                 <div className="w-full h-48 bg-gray-50 rounded-lg border border-gray-200">
-                  <PyramidShape path="https://app.muscadine.io" />
+                  <PyramidShape path="https://app.muscadine.xyz" />
                 </div>
                 
                 <h3 className="text-2xl font-light text-gray-900 font-serif">
@@ -231,7 +231,7 @@ const MuscadineHome = () => {
                   Access our Morpho vaults on Base for secure yield on USDC, Bitcoin, and Ethereum. Built for financial freedom with flexible deposits/withdrawals of any amount, anytime.
                 </p>
                 <a 
-                  href="https://app.muscadine.io"
+                  href="https://app.muscadine.xyz"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors"
@@ -301,7 +301,7 @@ const MuscadineHome = () => {
               <div className="space-y-6">
                 {/* 3D Shape Container */}
                 <div className="w-full h-48 bg-gray-50 rounded-lg border border-gray-200">
-                  <PolyhedronShape path="https://portfolio.muscadine.io" />
+                  <PolyhedronShape path="https://portfolio.muscadine.xyz" />
                 </div>
                 
                 <h3 className="text-2xl font-light text-gray-900 font-serif">
@@ -311,7 +311,7 @@ const MuscadineHome = () => {
                   Track, manage, and plan your net worth, assets, liabilities, cash, and more. A unified view of your financial picture to help you make informed decisions.
                 </p>
                 <a 
-                  href="https://portfolio.muscadine.io"
+                  href="https://portfolio.muscadine.xyz"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors"
@@ -344,16 +344,16 @@ const MuscadineHome = () => {
             <p className="text-gray-200 leading-relaxed mb-6">
               Explore metrics and dashboards at{' '}
               <a 
-                href="https://analytics.muscadine.io" 
+                href="https://analytics.muscadine.xyz" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-white font-medium underline underline-offset-2 hover:no-underline"
               >
-                analytics.muscadine.io
+                analytics.muscadine.xyz
               </a>
             </p>
             <a 
-              href="https://analytics.muscadine.io" 
+              href="https://analytics.muscadine.xyz" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-6 py-3 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-colors text-sm"

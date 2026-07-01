@@ -39,7 +39,7 @@ const SolutionsPage = () => {
                 Access our Morpho vaults on Base for secure yield on USDC, Bitcoin, and Ethereum. Built for financial freedom with flexible deposits/withdrawals of any amount, anytime.
               </p>
               <a 
-                href="https://app.muscadine.io"
+                href="https://app.muscadine.xyz"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors"
@@ -83,7 +83,7 @@ const SolutionsPage = () => {
                 Track, manage, and plan your net worth, assets, liabilities, cash, and more. A unified view of your financial picture to help you make informed decisions.
               </p>
               <a 
-                href="https://portfolio.muscadine.io"
+                href="https://portfolio.muscadine.xyz"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors"

@@ -21,14 +21,14 @@ const LegalPage: React.FC = () => {
             <p className="text-yellow-800">
               Muscadine Labs LLC is a DeFi vault curator and technology provider — not a bank, broker, investment adviser, or custodian. For operational risk framework and vault exposure summaries, see our{' '}
               <Link href="/risk" className="underline font-semibold">Risk</Link> page. Technical documentation is published at{' '}
-              <a href="https://docs.muscadine.io/" target="_blank" rel="noopener noreferrer" className="underline font-semibold">docs.muscadine.io</a>.
+              <a href="https://docs.muscadine.xyz/" target="_blank" rel="noopener noreferrer" className="underline font-semibold">docs.muscadine.xyz</a>.
             </p>
           </div>
 
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Our Services</h2>
             <p className="text-gray-700 mb-4">
-              Muscadine Labs LLC curates non-custodial Morpho vault strategies on Base, publishes educational self-custody guidance, and operates related interfaces (including app.muscadine.io). We do not custody user assets. Our services include:
+              Muscadine Labs LLC curates non-custodial Morpho vault strategies on Base, publishes educational self-custody guidance, and operates related interfaces (including app.muscadine.xyz). We do not custody user assets. Our services include:
             </p>
             <ul className="text-gray-700 list-disc list-inside space-y-2 mb-4">
               <li><strong>Risk Curation for Non-Custodial Morpho Vaults:</strong> We curate and manage risk for non-custodial vault services, including Morpho vaults, evaluating protocols, assessing smart contract security, and providing guidance on safe DeFi participation</li>
@@ -267,7 +267,7 @@ const LegalPage: React.FC = () => {
               <p className="text-gray-700 mb-2">If you have questions about this legal disclaimer, please contact us:</p>
               <p className="text-gray-700"><strong>Company:</strong> Muscadine Labs LLC</p>
               <p className="text-gray-700"><strong>Email:</strong> muscadinelabs@gmail.com</p>
-              <p className="text-gray-700"><strong>Website:</strong> muscadine.io</p>
+              <p className="text-gray-700"><strong>Website:</strong> muscadine.xyz</p>
             </div>
           </section>
 

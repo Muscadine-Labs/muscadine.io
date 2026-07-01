@@ -33,7 +33,7 @@ export default function SelfCustodyPage() {
 
   // DeFi functions
   const openMuscadine = () => {
-    window.open('https://app.muscadine.io', '_blank', 'noopener,noreferrer');
+    window.open('https://app.muscadine.xyz', '_blank', 'noopener,noreferrer');
   };
 
   const openAave = () => {
