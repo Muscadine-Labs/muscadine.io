@@ -27,10 +27,6 @@ export default function SelfCustodyPage() {
     window.open('https://seedsigner.com/', '_blank', 'noopener,noreferrer');
   };
 
-  const openColdcard = () => {
-    window.open('https://coldcard.com/', '_blank', 'noopener,noreferrer');
-  };
-
   // DeFi functions
   const openMuscadine = () => {
     window.open('https://app.muscadine.xyz', '_blank', 'noopener,noreferrer');
@@ -122,7 +118,7 @@ export default function SelfCustodyPage() {
               <ul className="text-gray-700 space-y-2 ml-4 list-disc">
                 <li><strong>Family Master Seed:</strong> One master seed generates all child master keys</li>
                 <li><strong>Unique Indices:</strong> Assign each family member a unique index (1=Dad, 2=Mom, 3=You)</li>
-                <li><strong>Individual Wallets:</strong> Each person derives their wallet using SeedSigner or Coldcard</li>
+                <li><strong>Individual Wallets:</strong> Each person derives their wallet using SeedSigner or a hardware wallet</li>
                 <li><strong>Recovery Benefits:</strong> Lost child seed can be re-derived from master + index</li>
               </ul>
             </div>
@@ -251,7 +247,7 @@ export default function SelfCustodyPage() {
                     <div>
                       <h4 className="text-lg font-medium text-gray-800 mb-2">Cold Wallet:</h4>
                       <p className="text-gray-700 mb-2">
-                        Use a SeedSigner (for paper-wallet setups; record every seed word carefully) or a Coldcard hardware wallet.
+                        Use a SeedSigner (for paper-wallet setups; record every seed word carefully) or a hardware wallet.
                       </p>
                     </div>
                     <div>
@@ -397,20 +393,13 @@ export default function SelfCustodyPage() {
                     <p className="text-sm text-gray-500">• Trezor Model T or One</p>
                     <p className="text-sm text-gray-500">• Ledger Nano S Plus or X</p>
                     <p className="text-sm text-gray-500">• Seedsigner (DIY air-gapped)</p>
-                    <p className="text-sm text-gray-500">• Coldcard (Bitcoin-only)</p>
                   </div>
                   <div className="mt-4 space-y-2">
-                    <button 
+                    <button
                       onClick={openSeedsigner}
                       className="w-full bg-purple-100 text-purple-800 px-4 py-2 rounded-lg hover:bg-purple-200 transition-colors"
                     >
                       Seedsigner
-                    </button>
-                    <button 
-                      onClick={openColdcard}
-                      className="w-full bg-gray-100 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors"
-                    >
-                      Coldcard
                     </button>
                   </div>
                   <div className="mt-4 p-3 bg-yellow-50 rounded-lg">
