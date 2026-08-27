@@ -8,57 +8,7 @@ export default function SelfCustodyPage() {
   const [bitcoinTab, setBitcoinTab] = useState<'about' | 'explore' | 'wallet' | 'transfer'>('about');
   const [defiTab, setDefiTab] = useState<'about' | 'lending' | 'swap' | 'wallet'>('about');
 
-  // Bitcoin functions
   const mempoolExplanation = "The mempool (memory pool) is where unconfirmed Bitcoin transactions wait before being added to a block. It helps the network manage and prioritize pending transactions.";
-
-  const openMempool = () => {
-    window.open('https://mempool.space', '_blank', 'noopener,noreferrer');
-  };
-
-  const openSparrowWallet = () => {
-    window.open('https://sparrowwallet.com/', '_blank', 'noopener,noreferrer');
-  };
-
-  const openSparrowDocs = () => {
-    window.open('https://sparrowwallet.com/docs/', '_blank', 'noopener,noreferrer');
-  };
-
-  const openSeedsigner = () => {
-    window.open('https://seedsigner.com/', '_blank', 'noopener,noreferrer');
-  };
-
-  // DeFi functions
-  const openMuscadine = () => {
-    window.open('https://app.muscadine.xyz', '_blank', 'noopener,noreferrer');
-  };
-
-  const openAave = () => {
-    window.open('https://app.aave.com/', '_blank', 'noopener,noreferrer');
-  };
-
-  const openMorpho = () => {
-    window.open('https://app.morpho.org/base/earn', '_blank', 'noopener,noreferrer');
-  };
-
-  const openAerodrome = () => {
-    window.open('https://aerodrome.finance/', '_blank', 'noopener,noreferrer');
-  };
-
-  const openUniswap = () => {
-    window.open('https://app.uniswap.org/', '_blank', 'noopener,noreferrer');
-  };
-
-  const openRabby = () => {
-    window.open('https://rabby.io/', '_blank', 'noopener,noreferrer');
-  };
-
-  const openPhantom = () => {
-    window.open('https://phantom.com/', '_blank', 'noopener,noreferrer');
-  };
-
-  const openDebank = () => {
-    window.open('https://debank.com/', '_blank', 'noopener,noreferrer');
-  };
 
   return (
     <div className="bg-white rounded-lg shadow-xs border border-gray-200 p-4 sm:p-8">
@@ -339,12 +289,14 @@ export default function SelfCustodyPage() {
                 <div className="bg-white border border-gray-200 rounded-lg p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-4">Bitcoin Explorer</h3>
                   <p className="text-gray-600 mb-4">Explore the Bitcoin blockchain and mempool in real-time</p>
-                  <button 
-                    onClick={openMempool}
-                    className="w-full bg-blue-100 text-blue-800 px-4 py-2 rounded-lg hover:bg-blue-200 transition-colors"
+                  <a
+                    href="https://mempool.space"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full text-center bg-blue-100 text-blue-800 px-4 py-2 rounded-lg hover:bg-blue-200 transition-colors"
                   >
                     Open Mempool.space
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -371,18 +323,22 @@ export default function SelfCustodyPage() {
                     <p className="text-sm text-gray-500">• Advanced transaction building</p>
                   </div>
                   <div className="mt-4 space-y-2">
-                    <button 
-                      onClick={openSparrowWallet}
-                      className="w-full bg-green-100 text-green-800 px-4 py-2 rounded-lg hover:bg-green-200 transition-colors"
+                    <a
+                      href="https://sparrowwallet.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full text-center bg-green-100 text-green-800 px-4 py-2 rounded-lg hover:bg-green-200 transition-colors"
                     >
                       Download Sparrow
-                    </button>
-                    <button 
-                      onClick={openSparrowDocs}
-                      className="w-full bg-gray-100 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors"
+                    </a>
+                    <a
+                      href="https://sparrowwallet.com/docs/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full text-center bg-gray-100 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors"
                     >
                       View Documentation
-                    </button>
+                    </a>
                   </div>
                 </div>
                 
@@ -395,12 +351,14 @@ export default function SelfCustodyPage() {
                     <p className="text-sm text-gray-500">• Seedsigner (DIY air-gapped)</p>
                   </div>
                   <div className="mt-4 space-y-2">
-                    <button
-                      onClick={openSeedsigner}
-                      className="w-full bg-purple-100 text-purple-800 px-4 py-2 rounded-lg hover:bg-purple-200 transition-colors"
+                    <a
+                      href="https://seedsigner.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full text-center bg-purple-100 text-purple-800 px-4 py-2 rounded-lg hover:bg-purple-200 transition-colors"
                     >
                       Seedsigner
-                    </button>
+                    </a>
                   </div>
                   <div className="mt-4 p-3 bg-yellow-50 rounded-lg">
                     <p className="text-sm text-yellow-800">
@@ -524,12 +482,14 @@ export default function SelfCustodyPage() {
                     <p className="text-sm text-gray-500">• Industry-low fees</p>
                     <p className="text-sm text-gray-500">• Flexible deposits/withdrawals</p>
                   </div>
-                  <button 
-                    onClick={openMuscadine}
-                    className="w-full mt-4 bg-green-100 text-green-800 px-4 py-2 rounded-lg hover:bg-green-200 transition-colors"
+                  <a
+                    href="https://app.muscadine.xyz"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full mt-4 text-center bg-green-100 text-green-800 px-4 py-2 rounded-lg hover:bg-green-200 transition-colors"
                   >
                     Launch Muscadine App
-                  </button>
+                  </a>
                 </div>
                 
                 <div className="bg-white border border-green-200 rounded-lg p-6">
@@ -540,12 +500,14 @@ export default function SelfCustodyPage() {
                     <p className="text-sm text-gray-500">• Better rates than traditional AMMs</p>
                     <p className="text-sm text-gray-500">• Available on multiple networks</p>
                   </div>
-                  <button 
-                    onClick={openMorpho}
-                    className="w-full mt-4 bg-green-100 text-green-800 px-4 py-2 rounded-lg hover:bg-green-200 transition-colors"
+                  <a
+                    href="https://app.morpho.org/base/earn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full mt-4 text-center bg-green-100 text-green-800 px-4 py-2 rounded-lg hover:bg-green-200 transition-colors"
                   >
                     Open Morpho
-                  </button>
+                  </a>
                 </div>
                 
                 <div className="bg-white border border-blue-200 rounded-lg p-6">
@@ -556,12 +518,14 @@ export default function SelfCustodyPage() {
                     <p className="text-sm text-gray-500">• Variable and stable interest rates</p>
                     <p className="text-sm text-gray-500">• Available on Ethereum, Base, and more</p>
                   </div>
-                  <button 
-                    onClick={openAave}
-                    className="w-full mt-4 bg-blue-100 text-blue-800 px-4 py-2 rounded-lg hover:bg-blue-200 transition-colors"
+                  <a
+                    href="https://app.aave.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full mt-4 text-center bg-blue-100 text-blue-800 px-4 py-2 rounded-lg hover:bg-blue-200 transition-colors"
                   >
                     Open Aave
-                  </button>
+                  </a>
                 </div>
                 
               </div>
@@ -587,12 +551,14 @@ export default function SelfCustodyPage() {
                     <p className="text-sm text-gray-500">• Low fees and fast transactions</p>
                     <p className="text-sm text-gray-500">• Liquidity mining rewards</p>
                   </div>
-                  <button 
-                    onClick={openAerodrome}
-                    className="w-full mt-4 bg-cyan-100 text-cyan-800 px-4 py-2 rounded-lg hover:bg-cyan-200 transition-colors"
+                  <a
+                    href="https://aerodrome.finance/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full mt-4 text-center bg-cyan-100 text-cyan-800 px-4 py-2 rounded-lg hover:bg-cyan-200 transition-colors"
                   >
                     Open Aerodrome
-                  </button>
+                  </a>
                 </div>
                 
                 <div className="bg-white border border-pink-200 rounded-lg p-6">
@@ -603,12 +569,14 @@ export default function SelfCustodyPage() {
                     <p className="text-sm text-gray-500">• Large liquidity pools</p>
                     <p className="text-sm text-gray-500">• Well-established and trusted</p>
                   </div>
-                  <button 
-                    onClick={openUniswap}
-                    className="w-full mt-4 bg-pink-100 text-pink-800 px-4 py-2 rounded-lg hover:bg-pink-200 transition-colors"
+                  <a
+                    href="https://app.uniswap.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full mt-4 text-center bg-pink-100 text-pink-800 px-4 py-2 rounded-lg hover:bg-pink-200 transition-colors"
                   >
                     Open Uniswap
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -634,12 +602,14 @@ export default function SelfCustodyPage() {
                     <p className="text-sm text-gray-500">• Hardware wallet integration</p>
                     <p className="text-sm text-gray-500">• Gas optimization features</p>
                   </div>
-                  <button 
-                    onClick={openRabby}
-                    className="w-full mt-4 bg-blue-100 text-blue-800 px-4 py-2 rounded-lg hover:bg-blue-200 transition-colors"
+                  <a
+                    href="https://rabby.io/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full mt-4 text-center bg-blue-100 text-blue-800 px-4 py-2 rounded-lg hover:bg-blue-200 transition-colors"
                   >
                     Open Rabby
-                  </button>
+                  </a>
                 </div>
                 
                 <div className="bg-white border border-purple-200 rounded-lg p-6">
@@ -651,12 +621,14 @@ export default function SelfCustodyPage() {
                     <p className="text-sm text-gray-500">• NFT support</p>
                     <p className="text-sm text-gray-500">• User-friendly interface</p>
                   </div>
-                  <button 
-                    onClick={openPhantom}
-                    className="w-full mt-4 bg-purple-100 text-purple-800 px-4 py-2 rounded-lg hover:bg-purple-200 transition-colors"
+                  <a
+                    href="https://phantom.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full mt-4 text-center bg-purple-100 text-purple-800 px-4 py-2 rounded-lg hover:bg-purple-200 transition-colors"
                   >
                     Open Phantom
-                  </button>
+                  </a>
                 </div>
                 
                 <div className="bg-white border border-green-200 rounded-lg p-6">
@@ -668,12 +640,14 @@ export default function SelfCustodyPage() {
                     <p className="text-sm text-gray-500">• DeFi protocol discovery</p>
                     <p className="text-sm text-gray-500">• Mobile and desktop apps</p>
                   </div>
-                  <button 
-                    onClick={openDebank}
-                    className="w-full mt-4 bg-green-100 text-green-800 px-4 py-2 rounded-lg hover:bg-green-200 transition-colors"
+                  <a
+                    href="https://debank.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full mt-4 text-center bg-green-100 text-green-800 px-4 py-2 rounded-lg hover:bg-green-200 transition-colors"
                   >
                     Open DeBank
-                  </button>
+                  </a>
                 </div>
                 
                 <div className="bg-white border border-orange-200 rounded-lg p-6">
