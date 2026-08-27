@@ -41,8 +41,7 @@ const TermsPage: React.FC = () => {
             <ul className="text-gray-700 list-disc list-inside space-y-2 mb-4">
               <li><strong>muscadine.xyz</strong> — company site, legal documents, and risk disclosures (authoritative source)</li>
               <li><strong>app.muscadine.xyz</strong> — non-custodial interface to interact with curated Morpho vaults on Base</li>
-              <li><strong>docs.muscadine.xyz</strong> — technical documentation; legal, terms, privacy, and risk pages mirror content published here</li>
-              <li><strong>analytics.muscadine.xyz</strong> — vault configuration and performance data</li>
+              <li><strong>analytics.muscadine.xyz</strong> — vault configuration, roles, and performance data</li>
             </ul>
             <p className="text-gray-700 mb-4">Our services include:</p>
             <ul className="text-gray-700 list-disc list-inside space-y-2 mb-4">

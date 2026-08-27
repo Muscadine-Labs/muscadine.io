@@ -80,10 +80,10 @@ export default function NodePage() {
             <div>
               <p className="text-sm text-gray-600 mb-2 font-medium">Electrum Server Hostname:</p>
               <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                <code className="bg-gray-100 px-3 py-2 rounded-sm text-sm min-w-0 break-all font-mono">q7io76kpyxrsqkrmegrfcjivjdcnbtinx64xntapc7z36gofr4r4bpad.onion</code>
+                <code className="bg-gray-100 px-3 py-2 rounded-sm text-sm min-w-0 break-all font-mono">gq6fwuul5vdayoy5wutvavelt5bglezmohypuxdb7bfk2tayitpllvid.onion</code>
                 <button 
                   className="bg-blue-600 text-white px-3 py-2 rounded-sm text-sm hover:bg-blue-700 transition-colors shrink-0 touch-manipulation" 
-                  onClick={() => copyToClipboard('q7io76kpyxrsqkrmegrfcjivjdcnbtinx64xntapc7z36gofr4r4bpad.onion')}
+                  onClick={() => copyToClipboard('gq6fwuul5vdayoy5wutvavelt5bglezmohypuxdb7bfk2tayitpllvid.onion')}
                 >
                   Copy
                 </button>
@@ -96,6 +96,18 @@ export default function NodePage() {
                 <button 
                   className="bg-green-600 text-white px-3 py-2 rounded-sm text-sm hover:bg-green-700 transition-colors shrink-0 touch-manipulation" 
                   onClick={() => copyToClipboard('50002')}
+                >
+                  Copy
+                </button>
+              </div>
+            </div>
+            <div>
+              <p className="text-sm text-gray-600 mb-2 font-medium">Protocol:</p>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+                <span className="bg-gray-100 px-3 py-2 rounded-sm text-sm font-mono">SSL</span>
+                <button 
+                  className="bg-green-600 text-white px-3 py-2 rounded-sm text-sm hover:bg-green-700 transition-colors shrink-0 touch-manipulation" 
+                  onClick={() => copyToClipboard('SSL')}
                 >
                   Copy
                 </button>

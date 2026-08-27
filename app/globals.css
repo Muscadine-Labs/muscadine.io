@@ -126,7 +126,7 @@
   body {
     color: var(--foreground);
     background: var(--background);
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-sans);
     line-height: 1.6;
   }
 }
@@ -178,7 +178,12 @@
 
 /* Mobile-specific optimizations */
 @media (hover: none) and (pointer: coarse) {
-  button, a, input, select, textarea {
+  button,
+  nav a,
+  header a,
+  input,
+  select,
+  textarea {
     min-height: 44px;
     min-width: 44px;
   }

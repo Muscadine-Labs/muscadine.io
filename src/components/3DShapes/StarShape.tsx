@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import * as THREE from 'three';
+import { openPath } from '@/src/lib/openPath';
 
 interface StarShapeProps {
   path: string;
@@ -171,7 +172,7 @@ const StarShape = ({ path }: StarShapeProps) => {
       } else {
         raycaster.setFromCamera(mouse, camera);
         const intersects = raycaster.intersectObject(mesh);
-        document.body.style.cursor = intersects.length > 0 ? 'grab' : 'default';
+        container.style.cursor = intersects.length > 0 ? 'grab' : 'default';
       }
     };
 
@@ -190,7 +191,7 @@ const StarShape = ({ path }: StarShapeProps) => {
         previousMouse.copy(mouse);
         dragStartTime = Date.now();
         dragStartMouse.copy(mouse);
-        document.body.style.cursor = 'grabbing';
+        container.style.cursor = 'grabbing';
       }
     };
 
@@ -200,23 +201,27 @@ const StarShape = ({ path }: StarShapeProps) => {
         const dragDistance = dragStartMouse.distanceTo(mouse);
 
         if (dragDuration < 200 && dragDistance < 0.1) {
-          router.push(path);
+          openPath(path, (href) => router.push(href));
         }
       }
 
       isDragging = false;
-      document.body.style.cursor = 'default';
+      container.style.cursor = 'default';
     };
 
     window.addEventListener('mousemove', onMouseMove);
     window.addEventListener('mousedown', onMouseDown);
     window.addEventListener('mouseup', onMouseUp);
 
-    // Animation
-    let animationFrameId: number;
+    let animationFrameId = 0;
+    let isVisible = true;
     const clock = new THREE.Clock();
 
     const animate = () => {
+      if (!isVisible) {
+        animationFrameId = 0;
+        return;
+      }
       animationFrameId = requestAnimationFrame(animate);
       const elapsedTime = clock.getElapsedTime();
 
@@ -229,9 +234,9 @@ const StarShape = ({ path }: StarShapeProps) => {
     animate();
 
     const handleResize = () => {
-      if (!containerRef.current) return;
-      const width = containerRef.current.clientWidth;
-      const height = containerRef.current.clientHeight;
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+      if (!width || !height) return;
       const aspect = width / height;
 
       camera.left = (frustumSize * aspect) / -2;
@@ -243,16 +248,29 @@ const StarShape = ({ path }: StarShapeProps) => {
       renderer.setSize(width, height);
     };
 
-    window.addEventListener('resize', handleResize);
+    const resizeObserver = new ResizeObserver(handleResize);
+    resizeObserver.observe(container);
+
+    const visibilityObserver = new IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry.isIntersecting;
+        if (isVisible && animationFrameId === 0) {
+          animate();
+        }
+      },
+      { threshold: 0.05 }
+    );
+    visibilityObserver.observe(container);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      resizeObserver.disconnect();
+      visibilityObserver.disconnect();
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('mousedown', onMouseDown);
       window.removeEventListener('mouseup', onMouseUp);
       cancelAnimationFrame(animationFrameId);
-      document.body.style.cursor = 'default';
-      if (container) {
+      container.style.cursor = 'default';
+      if (renderer.domElement.parentNode === container) {
         container.removeChild(renderer.domElement);
       }
       renderer.dispose();
