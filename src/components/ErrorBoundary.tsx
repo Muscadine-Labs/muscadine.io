@@ -34,7 +34,7 @@ class ErrorBoundary extends React.Component<{ children: React.ReactNode }, Error
             </div>
             <h2 className="text-2xl font-light text-stone-900 mb-2 font-serif">Oops! Something went wrong</h2>
             <p className="text-stone-700 mb-6">
-              We encountered an unexpected error. Don't worry, this has been logged and we'll look into it.
+              We encountered an unexpected error. Try reloading the page or going back.
             </p>
             {this.state.error?.message && (
               <details className="mb-6 text-left">

@@ -20,8 +20,8 @@ const LegalPage: React.FC = () => {
             </p>
             <p className="text-yellow-800">
               Muscadine Labs LLC is a DeFi vault curator and technology provider — not a bank, broker, investment adviser, or custodian. For operational risk framework and vault exposure summaries, see our{' '}
-              <Link href="/risk" className="underline font-semibold">Risk</Link> page. Technical documentation is published at{' '}
-              <a href="https://docs.muscadine.xyz/" target="_blank" rel="noopener noreferrer" className="underline font-semibold">docs.muscadine.xyz</a>.
+              <Link href="/risk" className="underline font-semibold">Risk</Link> page. Live vault configuration, roles, and performance data are on{' '}
+              <a href="https://analytics.muscadine.xyz/" target="_blank" rel="noopener noreferrer" className="underline font-semibold">analytics.muscadine.xyz</a>.
             </p>
           </div>
 

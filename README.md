@@ -41,7 +41,6 @@ npm start
 | Site | URL |
 |------|-----|
 | App | https://app.muscadine.xyz |
-| Docs | https://docs.muscadine.xyz |
 | Analytics | https://analytics.muscadine.xyz |
 | Curator | https://curator.muscadine.xyz |
 | Portfolio | https://portfolio.muscadine.xyz |

@@ -106,14 +106,14 @@ const RiskPage: React.FC = () => {
               </table>
             </div>
             <p className="text-gray-700 text-sm">
-              On-chain roles and contract addresses:{' '}
+              On-chain roles and contract addresses per vault:{' '}
               <a
-                href="https://docs.muscadine.xyz/vault/roles-contracts"
+                href="https://analytics.muscadine.xyz/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-orange-600 underline"
               >
-                docs.muscadine.xyz — Roles &amp; contracts
+                analytics.muscadine.xyz
               </a>
             </p>
           </section>
@@ -183,8 +183,8 @@ const RiskPage: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <a href="https://docs.muscadine.xyz/" target="_blank" rel="noopener noreferrer" className="text-orange-600 underline">
-                  Technical documentation (docs.muscadine.xyz)
+                <a href="https://analytics.muscadine.xyz/" target="_blank" rel="noopener noreferrer" className="text-orange-600 underline">
+                  Vault analytics (analytics.muscadine.xyz)
                 </a>
               </li>
             </ul>

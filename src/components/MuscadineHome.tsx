@@ -1,14 +1,16 @@
 'use client';
 
-import { useEffect, useState, useRef, useCallback } from 'react';
-import IsometricNodes from './IsometricNodes';
-import PolyhedronShape from './3DShapes/PolyhedronShape';
-import StarShape from './3DShapes/StarShape';
-import TorusShape from './3DShapes/TorusShape';
-import PyramidShape from './3DShapes/PyramidShape';
-import PixelBlast from './PixelBlast';
+import { useEffect, useState, useRef } from 'react';
+import dynamic from 'next/dynamic';
+import Link from 'next/link';
 
-// Count-up animation component
+const IsometricNodes = dynamic(() => import('./IsometricNodes'), { ssr: false });
+const PolyhedronShape = dynamic(() => import('./3DShapes/PolyhedronShape'), { ssr: false });
+const StarShape = dynamic(() => import('./3DShapes/StarShape'), { ssr: false });
+const TorusShape = dynamic(() => import('./3DShapes/TorusShape'), { ssr: false });
+const PyramidShape = dynamic(() => import('./3DShapes/PyramidShape'), { ssr: false });
+const PixelBlast = dynamic(() => import('./PixelBlast'), { ssr: false });
+
 const CountUpAnimation = ({ target, duration = 2000, suffix = '', prefix = '' }: { 
   target: number; 
   duration?: number; 
@@ -19,32 +21,32 @@ const CountUpAnimation = ({ target, duration = 2000, suffix = '', prefix = '' }:
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
-  const startCountUp = useCallback(() => {
-    const startTime = Date.now();
-    const animate = () => {
-      const elapsed = Date.now() - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      
-      // Easing function for smooth animation
-      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-      const currentCount = Math.floor(target * easeOutQuart);
-      
-      setCount(currentCount);
-      
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      } else {
-        setCount(target);
-      }
-    };
-    
-    requestAnimationFrame(animate);
-  }, [duration, target]);
-
   useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    let raf = 0;
+    let started = false;
+
+    const startCountUp = () => {
+      const startTime = performance.now();
+      const animate = (now: number) => {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+        setCount(Math.floor(target * easeOutQuart));
+        if (progress < 1) {
+          raf = requestAnimationFrame(animate);
+        } else {
+          setCount(target);
+        }
+      };
+      raf = requestAnimationFrame(animate);
+    };
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !isVisible) {
+        if (entry.isIntersecting && !started) {
+          started = true;
           setIsVisible(true);
           startCountUp();
         }
@@ -52,23 +54,26 @@ const CountUpAnimation = ({ target, duration = 2000, suffix = '', prefix = '' }:
       { threshold: 0.3 }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+    observer.observe(el);
 
-    return () => observer.disconnect();
-  }, [isVisible, startCountUp]);
+    return () => {
+      observer.disconnect();
+      cancelAnimationFrame(raf);
+    };
+  }, [duration, target]);
 
   const formatNumber = (num: number) => {
-    if (num >= 1000000) {
-      return (num / 1000000).toFixed(1);
-    } else if (num >= 1000) {
+    if (target >= 1000000) {
+      const millions = num / 1000000;
+      return Number.isInteger(millions) ? String(millions) : millions.toFixed(1);
+    }
+    if (target >= 1000) {
       return (num / 1000).toFixed(0);
     }
     return num.toString();
   };
 
-  const needsSmallUnit = target >= 1000000 || target >= 1000;
+  const needsSmallUnit = target >= 1000;
   const unit = target >= 1000000 ? 'M' : target >= 1000 ? 'K' : '';
 
   return (
@@ -119,36 +124,6 @@ const MuscadineHome = () => {
             <p className="text-lg text-gray-600 leading-relaxed">
               We're here to make sure your crypto journey is safe and secure. From Bitcoin self-custody to DeFi protocols, we provide expert guidance and institutional-grade security solutions that protect your digital assets through proper education and secure practices.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start items-center lg:items-start">
-              <a 
-                href="https://app.muscadine.xyz" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-6 py-3 border-2 border-gray-900 hover:border-gray-800 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-colors"
-              >
-                Launch App
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-              <a 
-                href="/about" 
-                className="inline-flex items-center justify-center px-6 py-3 border-2 border-gray-300 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white hover:border-gray-900 transition-all duration-300"
-              >
-                About Us
-              </a>
-              <a 
-                href="https://docs.muscadine.xyz/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-6 py-3 border-2 border-gray-300 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white hover:border-gray-900 transition-all duration-300"
-              >
-                Read the Docs
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-            </div>
           </div>
 
           {/* Right side - 3D Animation */}
@@ -169,7 +144,7 @@ const MuscadineHome = () => {
               {/* Stat 1 - Clients */}
               <div className="flex-1">
                 <CountUpAnimation 
-                  target={10} 
+                  target={12} 
                   duration={1500} 
                   suffix="+" 
                 />
@@ -181,7 +156,7 @@ const MuscadineHome = () => {
               {/* Stat 2 - Assets */}
               <div className="flex-1">
                 <CountUpAnimation 
-                  target={12000000} 
+                  target={15000000} 
                   duration={2000} 
                   prefix="$" 
                   suffix="+" 
@@ -258,7 +233,7 @@ const MuscadineHome = () => {
                 <p className="text-base text-gray-600 leading-relaxed">
                   Connect to our self-hosted Bitcoin node for secure transactions and enhanced privacy. Access a full Bitcoin node for verification and transaction broadcasting.
                 </p>
-                <a 
+                <Link 
                   href="/node"
                   className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors"
                 >
@@ -266,7 +241,7 @@ const MuscadineHome = () => {
                   <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -284,7 +259,7 @@ const MuscadineHome = () => {
                 <p className="text-base text-gray-600 leading-relaxed">
                   Complete control of your digital assets through Bitcoin security and DeFi strategies. Learn secure wallet management, hardware setup, and risk-aware approaches to decentralized finance.
                 </p>
-                <a 
+                <Link 
                   href="/self-custody"
                   className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors"
                 >
@@ -292,7 +267,7 @@ const MuscadineHome = () => {
                   <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
 

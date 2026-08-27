@@ -381,6 +381,7 @@ const PixelBlast: React.FC<PixelBlastProps> = ({
       uEdgeFade: { value: number };
     };
     resizeObserver?: ResizeObserver;
+    visibilityObserver?: IntersectionObserver;
     raf?: number;
     quad?: THREE.Mesh<THREE.PlaneGeometry, THREE.ShaderMaterial>;
     timeOffset?: number;
@@ -408,6 +409,7 @@ const PixelBlast: React.FC<PixelBlastProps> = ({
       if (threeRef.current) {
         const t = threeRef.current;
         t.resizeObserver?.disconnect();
+        t.visibilityObserver?.disconnect();
         cancelAnimationFrame(t.raf!);
         t.quad?.geometry.dispose();
         t.material.dispose();
@@ -557,7 +559,8 @@ const PixelBlast: React.FC<PixelBlastProps> = ({
       let raf = 0;
       const animate = () => {
         if (autoPauseOffscreen && !visibilityRef.current.visible) {
-          raf = requestAnimationFrame(animate);
+          raf = 0;
+          if (threeRef.current) threeRef.current.raf = 0;
           return;
         }
         uniforms.uTime.value = timeOffset + clock.getElapsedTime() * speedRef.current;
@@ -575,7 +578,19 @@ const PixelBlast: React.FC<PixelBlastProps> = ({
           composer.render();
         } else renderer.render(scene, camera);
         raf = requestAnimationFrame(animate);
+        if (threeRef.current) threeRef.current.raf = raf;
       };
+      const visibilityObserver = new IntersectionObserver(
+        ([entry]) => {
+          visibilityRef.current.visible = entry.isIntersecting;
+          if (entry.isIntersecting && raf === 0) {
+            raf = requestAnimationFrame(animate);
+            if (threeRef.current) threeRef.current.raf = raf;
+          }
+        },
+        { threshold: 0.05 }
+      );
+      visibilityObserver.observe(container);
       raf = requestAnimationFrame(animate);
       threeRef.current = {
         renderer,
@@ -586,6 +601,7 @@ const PixelBlast: React.FC<PixelBlastProps> = ({
         clickIx: 0,
         uniforms,
         resizeObserver: ro,
+        visibilityObserver,
         raf,
         quad,
         timeOffset,
@@ -618,17 +634,7 @@ const PixelBlast: React.FC<PixelBlastProps> = ({
     }
     prevConfigRef.current = cfg;
     return () => {
-      if (threeRef.current && mustReinit) return;
-      if (!threeRef.current) return;
-      const t = threeRef.current;
-      t.resizeObserver?.disconnect();
-      cancelAnimationFrame(t.raf!);
-      t.quad?.geometry.dispose();
-      t.material.dispose();
-      t.composer?.dispose();
-      t.renderer.dispose();
-      if (t.renderer.domElement.parentElement === container) container.removeChild(t.renderer.domElement);
-      threeRef.current = null;
+      if (mustReinit) return;
     };
   }, [
     antialias,
@@ -652,6 +658,24 @@ const PixelBlast: React.FC<PixelBlastProps> = ({
     color,
     speed
   ]);
+
+  useEffect(() => {
+    return () => {
+      const t = threeRef.current;
+      if (!t) return;
+      t.resizeObserver?.disconnect();
+      t.visibilityObserver?.disconnect();
+      cancelAnimationFrame(t.raf ?? 0);
+      t.quad?.geometry.dispose();
+      t.material.dispose();
+      t.composer?.dispose();
+      t.renderer.dispose();
+      if (t.renderer.domElement.parentElement) {
+        t.renderer.domElement.parentElement.removeChild(t.renderer.domElement);
+      }
+      threeRef.current = null;
+    };
+  }, []);
 
   return (
     <div

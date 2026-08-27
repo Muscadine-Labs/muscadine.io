@@ -36,8 +36,8 @@ const IsometricNodes = () => {
       alpha: true,
       powerPreference: 'high-performance'
     });
-    renderer.setSize(container.clientWidth, container.clientHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Cap at 2 for performance
+    renderer.setSize(Math.max(container.clientWidth, 1), Math.max(container.clientHeight, 1));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     container.appendChild(renderer.domElement);
 
     // Lighting
@@ -135,12 +135,15 @@ const IsometricNodes = () => {
     glowSphere2.position.set(1.5, 0, 0); // Adjusted for closer nodes
     scene.add(glowSphere2);
 
-    // Animation
-    let animationFrameId: number;
+    let animationFrameId = 0;
+    let isVisible = true;
     const animate = () => {
+      if (!isVisible) {
+        animationFrameId = 0;
+        return;
+      }
       animationFrameId = requestAnimationFrame(animate);
 
-      // Pulse the glow spheres with slight offset
       const time = Date.now() * 0.003;
       const scale1 = 1 + Math.sin(time) * 0.3;
       const scale2 = 1 + Math.sin(time + Math.PI / 2) * 0.3;
@@ -153,12 +156,10 @@ const IsometricNodes = () => {
 
     animate();
 
-    // Handle window resize
     const handleResize = () => {
-      if (!containerRef.current) return;
-      
-      const width = containerRef.current.clientWidth;
-      const height = containerRef.current.clientHeight;
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+      if (!width || !height) return;
       const aspect = width / height;
 
       camera.left = (frustumSize * aspect) / -2;
@@ -170,13 +171,25 @@ const IsometricNodes = () => {
       renderer.setSize(width, height);
     };
 
-    window.addEventListener('resize', handleResize);
+    const resizeObserver = new ResizeObserver(handleResize);
+    resizeObserver.observe(container);
 
-    // Cleanup
+    const visibilityObserver = new IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry.isIntersecting;
+        if (isVisible && animationFrameId === 0) {
+          animate();
+        }
+      },
+      { threshold: 0.05 }
+    );
+    visibilityObserver.observe(container);
+
     return () => {
-      window.removeEventListener('resize', handleResize);
+      resizeObserver.disconnect();
+      visibilityObserver.disconnect();
       cancelAnimationFrame(animationFrameId);
-      if (container) {
+      if (renderer.domElement.parentNode === container) {
         container.removeChild(renderer.domElement);
       }
       renderer.dispose();
@@ -198,7 +211,7 @@ const IsometricNodes = () => {
   return (
     <div
       ref={containerRef}
-      className="w-full h-full min-h-[400px]"
+      className="w-full h-full"
       style={{ touchAction: 'none' }}
     />
   );

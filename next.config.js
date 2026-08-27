@@ -2,9 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   output: 'standalone',
-  images: {
-    domains: [],
-  },
+  agentRules: false,
 };
 
 module.exports = nextConfig;

@@ -1,9 +1,9 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter, Playfair_Display } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import MuscadineBanner from '@/src/components/MuscadineBanner';
 import MuscadineFooter from '@/src/components/MuscadineFooter';
-import CustomAnalytics from '@/src/components/Analytics';
 import ErrorBoundary from '@/src/components/ErrorBoundary';
 import ScrollToTop from '@/src/components/ScrollToTop';
 import './globals.css';
@@ -20,11 +20,19 @@ const playfair = Playfair_Display({
   display: 'swap',
 });
 
+export const viewport: Viewport = {
+  themeColor: '#f59e0b',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export const metadata: Metadata = {
+  metadataBase: new URL('https://muscadine.xyz'),
   title: 'Muscadine Labs',
   description: 'Empowering financial freedom through Bitcoin security and decentralized finance.',
   keywords: 'DeFi, Bitcoin, Base, Morpho, vault, yield, crypto, finance, self-sovereignty, dashboard',
-  authors: [{ name: 'Nicholas Connelly' }],
+  authors: [{ name: 'Muscadine Labs' }],
   openGraph: {
     title: 'Muscadine Labs',
     description: 'Empowering financial freedom through Bitcoin security and decentralized finance.',
@@ -36,7 +44,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Muscadine Labs',
     description: 'Empowering financial freedom through Bitcoin security and decentralized finance.',
-    creator: '@nicklutk',
+    creator: '@muscadinelabs',
   },
   robots: {
     index: true,
@@ -44,10 +52,7 @@ export const metadata: Metadata = {
   },
   manifest: '/manifest.json',
   icons: {
-    icon: [
-      { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/favicon.png', type: 'image/png' },
-    ],
+    icon: [{ url: '/favicon.png', type: 'image/png' }],
   },
 };
 
@@ -59,9 +64,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <head>
-        <meta name="theme-color" content="#f59e0b" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
-        <link rel="canonical" href="https://muscadine.xyz" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -74,18 +76,18 @@ export default function RootLayout({
               applicationCategory: 'FinanceApplication',
               operatingSystem: 'Web Browser',
               author: {
-                '@type': 'Person',
-                name: 'Nicholas Connelly',
-                url: 'https://twitter.com/nicklutk',
+                '@type': 'Organization',
+                name: 'Muscadine Labs',
+                url: 'https://x.com/muscadinelabs',
               },
             }),
           }}
         />
       </head>
-      <body className="bg-marble antialiased">
+      <body className="bg-gray-50 antialiased">
         <ErrorBoundary>
           <Analytics />
-          <CustomAnalytics pageName="defi-dashboard" />
+          <SpeedInsights />
           <ScrollToTop />
           <div className="min-h-screen bg-gray-50 flex flex-col overflow-x-hidden">
             <MuscadineBanner />
