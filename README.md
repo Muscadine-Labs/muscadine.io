@@ -2,7 +2,6 @@
 
 Next.js marketing site for Muscadine Labs — financial self-sovereignty platform.
 
-**Live:** [https://muscadine.xyz](https://muscadine.xyz) · **Repo folder:** `muscadine.xyz` (GitHub: [Muscadine-Labs/muscadine.io](https://github.com/Muscadine-Labs/muscadine.io))
 
 ## Tech Stack
 
@@ -36,14 +35,6 @@ npm start
 - `src/components/` - React components
 - `public/` - Static assets
 
-## Related sites
-
-| Site | URL |
-|------|-----|
-| App | https://app.muscadine.xyz |
-| Analytics | https://analytics.muscadine.xyz |
-| Curator | https://curator.muscadine.xyz |
-| Portfolio | https://portfolio.muscadine.xyz |
 
 ## License
 
