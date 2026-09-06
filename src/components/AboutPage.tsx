@@ -42,6 +42,7 @@ const AboutPage = () => {
                 height={600}
                 className="w-full h-auto rounded-lg shadow-lg"
                 priority
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -98,6 +99,7 @@ const AboutPage = () => {
                       src="/Nicholas.connelly.headshot.jpg" 
                       alt="Nicholas Connelly" 
                       fill
+                      sizes="256px"
                       className="object-cover object-top" 
                     />
                   </div>
@@ -126,6 +128,7 @@ const AboutPage = () => {
                       src="/Ignas.panavas.headshot.jpg" 
                       alt="Ignas Panavas" 
                       fill
+                      sizes="256px"
                       className="object-cover object-top scale-150" 
                     />
                   </div>
